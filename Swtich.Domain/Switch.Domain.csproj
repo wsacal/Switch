@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Intefaces\Services\" />
+    <Folder Include="Intefaces\Repositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
