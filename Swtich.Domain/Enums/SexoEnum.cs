@@ -8,6 +8,6 @@ namespace Switch.Domain.Enums
     {
         NaoDefinido = 1,
         Femenino = 2,
-        Masculo = 3
+        Masculino = 3
     }
 }
