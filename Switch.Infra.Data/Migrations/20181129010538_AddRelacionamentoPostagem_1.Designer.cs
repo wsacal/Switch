@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Switch.Infra.Data.Context;
 
 namespace Switch.Infra.Data.Migrations
 {
     [DbContext(typeof(SwitchContext))]
-    partial class SwitchContextModelSnapshot : ModelSnapshot
+    [Migration("20181129010538_AddRelacionamentoPostagem_1")]
+    partial class AddRelacionamentoPostagem_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,11 +28,11 @@ namespace Switch.Infra.Data.Migrations
 
                     b.Property<int>("TipoDocumento");
 
-                    b.Property<int>("UsuarioId");
+                    b.Property<int>("UsuarioID");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioId")
+                    b.HasIndex("UsuarioID")
                         .IsUnique();
 
                     b.ToTable("Identificacao");
@@ -103,7 +105,7 @@ namespace Switch.Infra.Data.Migrations
                 {
                     b.HasOne("Switch.Domain.Entities.Usuario", "Usuario")
                         .WithOne("Identificacao")
-                        .HasForeignKey("Switch.Domain.Entities.Identificacao", "UsuarioId")
+                        .HasForeignKey("Switch.Domain.Entities.Identificacao", "UsuarioID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
