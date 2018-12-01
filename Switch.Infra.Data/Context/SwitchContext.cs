@@ -15,6 +15,11 @@ namespace Switch.Infra.Data.Context
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Identificacao> Identificacao { get; set; }
         public DbSet<UsuarioGrupo> UsuarioGrupos { get; set; }
+        public DbSet<Amigo> Amigos { get; set; }
+        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<InstituicaoEnsino> InstituicoesEnsino { get; set; }
+        public DbSet<LocalTrabalho> LocaisTrabalho { get; set; }
+        public DbSet<ProcurandoPor> ProcurandoPor { get; set; }
 
         public SwitchContext(DbContextOptions options) : base(options)
         {
@@ -28,24 +33,14 @@ namespace Switch.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new GrupoConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioGrupoConfiguration());
 
+            modelBuilder.ApplyConfiguration(new AmigoConfiguration());
+            modelBuilder.ApplyConfiguration(new ComentarioConfiguration());
+            modelBuilder.ApplyConfiguration(new StatusRelacionamentoConfiguration());
+            modelBuilder.ApplyConfiguration(new ProcurandoPorConfiguration());
+
             base.OnModelCreating(modelBuilder);
 
-        }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Usuario>(entity =>
-        //    {
-
-        //        entity.HasKey(u => u.Id);
-
-        //        entity.Property(u => u.Nome).IsRequired().HasMaxLength(400);
-        //    });              
-
-
-        //    base.OnModelCreating(modelBuilder);
-
-        //}        
+        }     
 
     }
 

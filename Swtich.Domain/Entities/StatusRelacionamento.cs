@@ -5,8 +5,6 @@ using System.Text;
 
 namespace Switch.Domain.Entities
 {
-
-  
     public class StatusRelacionamento
     {
         public int Id { get; set; }
@@ -15,6 +13,7 @@ namespace Switch.Domain.Entities
         public bool NaoEspecificado { get { return Id == (int)StatusRelacionamentoEnum.NaoEspecificado; } }
         public bool Solteiro { get { return Id == (int)StatusRelacionamentoEnum.Solteiro; } }
         public bool Casado { get { return Id == (int)StatusRelacionamentoEnum.Casado; } }
-        public bool EmRelacionamentoSerio { get { return Id == (int)StatusRelacionamentoEnum.EmRelacionamentoSerio; } }
+        public bool RelacionamentoSerio { get { return Id == (int)StatusRelacionamentoEnum.EmRelacionamentoSerio; } }
+
     }
 }

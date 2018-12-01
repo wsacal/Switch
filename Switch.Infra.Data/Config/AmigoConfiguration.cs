@@ -13,7 +13,6 @@ namespace Switch.Infra.Data.Config
         public void Configure(EntityTypeBuilder<Amigo> builder)
         {
             builder.HasKey(a => new { a.UsuarioId, a.UsuarioAmigoId });
-           
         }
     }
 }
